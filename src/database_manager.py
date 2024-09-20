@@ -65,7 +65,7 @@ class DBManager:
             conn.close()
 
     def get_vacancies_with_higher_salary(self) -> str:
-        """Возвращает список всех вакансий, у которых зарплата выше средней по всем вакансиям"""
+        """Возвращает список вакансий, у которых зарплата выше средней по всем вакансиям"""
         conn = psycopg2.connect(host=self.host, database=self.database, user=self.user, password=self.password)
         result = ""
         try:
@@ -89,7 +89,7 @@ class DBManager:
         return result
 
     def get_vacancies_with_keyword(self, *args) -> str:
-        """Возвращает список всех вакансий, в названии которых содержатся переданные в метод слова"""
+        """Возвращает список вакансий, в названии которых содержатся переданные в метод слова"""
         conn = psycopg2.connect(host=self.host, database=self.database, user=self.user, password=self.password)
         result = ""
         try:
